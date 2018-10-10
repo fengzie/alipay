@@ -1,8 +1,9 @@
 package alipay_test
 
 import (
-	"github.com/smartwalle/alipay"
 	"testing"
+
+	"github.com/fengzie/alipay"
 )
 
 func TestAliPay_FundTransToAccountTransfer(t *testing.T) {

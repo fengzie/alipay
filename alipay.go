@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/smartwalle/alipay/encoding"
+	"github.com/fengzie/alipay/encoding"
 )
 
 type AliPay struct {
