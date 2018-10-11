@@ -1,8 +1,9 @@
 package alipay_test
 
 import (
-	"github.com/smartwalle/alipay"
 	"testing"
+
+	"github.com/fengzie/alipay"
 )
 
 func TestAliPay_TradeAppPay(t *testing.T) {
@@ -13,7 +14,7 @@ func TestAliPay_TradeAppPay(t *testing.T) {
 	p.Subject = "商品标题"
 	p.OutTradeNo = "01010101"
 	p.TotalAmount = "100.00"
-	p.ProductCode = "p_1010101"
+	// p.ProductCode = "p_1010101"
 	param, err := client.TradeAppPay(p)
 	if err != nil {
 		t.FailNow()
@@ -29,7 +30,7 @@ func TestAliPay_TradePagePay(t *testing.T) {
 	p.Subject = "修正了中文的 Bug"
 	p.OutTradeNo = "trade_no_20170623011112"
 	p.TotalAmount = "10.00"
-	p.ProductCode = "FAST_INSTANT_TRADE_PAY"
+	// p.ProductCode = "FAST_INSTANT_TRADE_PAY"
 	url, err := client.TradePagePay(p)
 	if err != nil {
 		t.Fatal(err)
