@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strconv"
 	"strings"
 )
 
@@ -69,7 +70,10 @@ func GetTradeNotification(req *http.Request, aliPayPublicKey []byte) (noti *Trad
 	noti.NotifyTime = req.FormValue("notify_time")
 	noti.TradeNo = req.FormValue("trade_no")
 	noti.TradeStatus = req.FormValue("trade_status")
-	noti.TotalAmount = req.FormValue("total_amount")
+
+	amount, _ := strconv.ParseInt(req.FormValue("total_amount"), 10, 32)
+	noti.TotalAmount = amount
+
 	noti.ReceiptAmount = req.FormValue("receipt_amount")
 	noti.InvoiceAmount = req.FormValue("invoice_amount")
 	noti.BuyerPayAmount = req.FormValue("buyer_pay_amount")
