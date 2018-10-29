@@ -71,7 +71,7 @@ func GetTradeNotification(req *http.Request, aliPayPublicKey []byte) (noti *Trad
 	noti.TradeNo = req.FormValue("trade_no")
 	noti.TradeStatus = req.FormValue("trade_status")
 
-	amount, _ := strconv.ParseInt(req.FormValue("total_amount"), 10, 32)
+	amount, _ := strconv.ParseFloat(req.FormValue("total_amount"), 64)
 	noti.TotalAmount = amount
 
 	noti.ReceiptAmount = req.FormValue("receipt_amount")
